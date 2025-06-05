@@ -1,18 +1,14 @@
 package org.froneus.dino.model;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.froneus.dino.RandomDrawer;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DinosaurLifeCycleTest {
 
     @Test public void aDinosaurIsAlive() {
-        Assertions.assertTrue( RandomDrawer.blue().isAlive() );
+        assertTrue( RandomDrawer.blue().isAlive() );
     }
 
     @Test public void aDinosaurIsAliveWhenUpdatedeErly() {

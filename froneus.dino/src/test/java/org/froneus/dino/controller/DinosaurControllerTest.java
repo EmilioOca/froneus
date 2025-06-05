@@ -1,45 +1,30 @@
 package org.froneus.dino.controller;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import com.fasterxml.jackson.core.type.TypeReference;
-import java.time.LocalDateTime;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.froneus.dino.RandomDrawer;
 import org.froneus.dino.model.Dinosaur;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.List;
-import java.util.UUID;
 import org.froneus.dino.service.DinosaurService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 
 @SpringBootTest
 @AutoConfigureMockMvc
 public class DinosaurControllerTest {
-//    @Autowired DinosaurController controller;
-    @Autowired DinosaurService service;
-    @Autowired MockMvc mockMvc;
+    @Autowired private DinosaurService service;
+    @Autowired private MockMvc mockMvc;
     @Autowired private ObjectMapper objectMapper;
-//    @MockBean Dealer dealer;
-//
-//    @BeforeEach void beforeEach() {
-//        when( dealer.fullDeck() ).thenReturn( UnoServiceTest.fullDeck() );
-//    }
-
-
 
     @Test void shouldCreateDinosaurSuccessfully() throws Exception {
         Dinosaur request = RandomDrawer.someDinoAlive();

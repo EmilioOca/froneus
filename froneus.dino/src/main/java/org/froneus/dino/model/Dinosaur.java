@@ -1,16 +1,16 @@
 package org.froneus.dino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Objects;
 import lombok.Getter;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Getter
 @Entity
@@ -97,23 +97,4 @@ public class Dinosaur {
             enforceDates();
         }
     }
-//    public static Dinosaur fromDomain( Dinosaur dino ) {
-//        return new Dinosaur(
-//                dino.getName(),
-//                dino.getSpecies(),
-//                dino.getDiscoveryDate(),
-//                dino.getExtinctionDate(),
-//                dino.getStatus()
-//        );
-//    }
-
-//    public Dinosaur toDomain() {
-//        Dinosaur dino = new Dinosaur( this.name );
-//        dino.setSpecies( this.species );
-//        dino.setDiscoveryDate( this.discoveryDate );
-//        dino.setExtinctionDate( this.extinctionDate );
-//        dino.setStatus( this.status );
-//        return dino;
-//    }
-
 }

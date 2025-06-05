@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import org.froneus.dino.RandomDrawer;
 import org.froneus.dino.model.Dinosaur;
-import org.froneus.dino.service.DinosaurService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

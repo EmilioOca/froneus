@@ -1,6 +1,5 @@
 package org.froneus.dino;
 
-import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import org.froneus.dino.model.Dinosaur;
@@ -41,11 +40,4 @@ public class RandomDrawer {
         );
     }
 
-//    public static String evenRandomSSN() {
-//        String ssn;
-//        do {
-//            ssn = randomSSN();
-//        } while ( Integer.parseInt( ssn.substring(ssn.length() - 1) ) % 2 != 0  );
-//        return ssn;
-//    }
 }
